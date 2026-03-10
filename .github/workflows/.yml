@@ -1,0 +1,16 @@
+name: second workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+    test:
+      runs-on:  windows-2022
+      steps:
+        - name: print
+          run: echo "welcom"
+        - name: check
+          uses: actions/checkout@v6.0.2
+        
