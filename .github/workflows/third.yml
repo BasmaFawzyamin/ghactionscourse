@@ -1,0 +1,19 @@
+name: third-workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+   runs-on: ubuntu-latest
+   steps:
+     - name: check
+       uses: actions/checkout@v6.0.2
+
+     - name: contain
+       run: ls la
+
+     - name: print
+       run: echo "welcom"
