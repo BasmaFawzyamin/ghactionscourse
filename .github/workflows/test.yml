@@ -1,18 +1,31 @@
 name: test-ymal
+
 on:
-    push:
-        branches:
-            - main 
-    pull_request:
-        branches:
-             - main
-        paths:
-               - "src/**"
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "src/**"
+
 jobs:
-    exampel:
-       runs-on: ubuntu-22.04
-       steps:
-        - name : print
-          run : echo " welcome"    
-        - name: Run tests
-          run : npm test                   
+  test:                       # غيرت الاسم من exampel إلى test (أوضح)
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20        # يمكنك تغييره إلى 18 أو 22 حسب مشروعك
+          cache: 'npm'            # يسرّع التثبيت في المرات القادمة
+
+      - name: Install dependencies
+        run: npm ci               # أفضل من npm install في الـ CI
+
+      - name: Run tests
+        run: npm test
