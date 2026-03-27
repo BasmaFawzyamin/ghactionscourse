@@ -5,10 +5,8 @@ on:
        description: "choose enviroment"
        required: true
        default: "staging"
-       type: choice
-       options:
-         - staging
-         - production
+       type: string
+     
 
 jobs:
   deploy:
