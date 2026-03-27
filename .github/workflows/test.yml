@@ -2,7 +2,7 @@ name: test-ymal
 on:
     push:
         branches:
-            - main
+            - main 
     pull_request:
         branches:
              - main
@@ -10,7 +10,9 @@ on:
                - "src/**"
 jobs:
     exampel:
-       runs-on: windows-2022
+       runs-on: ubuntu-22.04
        steps:
         - name : print
-          run : echo " welcome"                     
+          run : echo " welcome"    
+        - name: Run tests
+          run : npm test                   
