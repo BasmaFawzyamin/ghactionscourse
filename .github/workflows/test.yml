@@ -1,0 +1,16 @@
+name: test-ymal
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+             - main
+        paths:
+               - "src/**"
+jobs:
+    exampel:
+       runs-on: windows-2022
+       steps:
+        - name : print
+          run : echo " welcome"                     
