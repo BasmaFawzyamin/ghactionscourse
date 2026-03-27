@@ -3,6 +3,6 @@ function greet(name){
 }
 
 MediaSourceHandle.export = greet;
-if (requestAnimationFrame.main == module){
-    console.log(greet("World"));
-}
+// if (requestAnimationFrame.main == module){
+//     console.log(greet("World"));
+// }
